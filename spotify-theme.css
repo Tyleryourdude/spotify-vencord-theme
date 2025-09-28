@@ -1,0 +1,153 @@
+/* Spotify-inspired Vencord Theme */
+
+/* Root variables for colors and fonts */
+:root {
+  --background-primary: #121212; /* Main background */
+  --background-secondary: #181818; /* Sidebar and panels */
+  --accent-color: #1DB954; /* Spotify green */
+  --text-color: #FFFFFF; /* Main text */
+  --subtext-color: #B3B3B3; /* Subtext */
+  --hover-color: #282828; /* Hover backgrounds */
+  --scrollbar-thumb: #404040; /* Scrollbar thumb */
+  --font-family: 'Arial', sans-serif; /* Font similar to Spotify's */
+}
+
+/* General body styling */
+body {
+  background-color: var(--background-primary);
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+/* Sidebar (left navigation) */
+.sidebarContainer {
+  background-color: var(--background-secondary);
+  border-right: 1px solid #282828;
+}
+
+/* Sidebar items (e.g., Home, Search, Your Library) */
+.sidebarItem {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-color);
+}
+.sidebarItem:hover, .sidebarItem.active {
+  background-color: var(--hover-color);
+  color: var(--accent-color);
+}
+
+/* Top Header (search bar, user profile) */
+.header {
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid #282828;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Search input */
+.searchInput {
+  background-color: #282828;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: var(--text-color);
+  width: 250px;
+}
+.searchInput::placeholder {
+  color: var(--subtext-color);
+}
+
+/* Main content area (playlist, album, etc.) */
+.mainContent {
+  background-color: var(--background-primary);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Song list items */
+.songItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.songItem:hover {
+  background-color: var(--hover-color);
+}
+.songItem.active {
+  background-color: #333333;
+}
+
+/* Song info (cover art, title, artist) */
+.songCover {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+}
+.songDetails {
+  display: flex;
+  flex-direction: column;
+}
+.songTitle {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-color);
+}
+.songArtist {
+  font-size: 12px;
+  color: var(--subtext-color);
+}
+
+/* Player controls at bottom (play, pause, next, prev) */
+.playerControls {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--background-secondary);
+  border-top: 1px solid #282828;
+}
+.controlButton {
+  background: none;
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+  color: var(--subtext-color);
+}
+.controlButton:hover {
+  color: var(--accent-color);
+}
+
+/* Progress bar */
+.progressBarContainer {
+  flex: 1;
+  height: 4px;
+  background-color: #404040;
+  border-radius: 2px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+.progressBar {
+  height: 4px;
+  background-color: var(--accent-color);
+  width: 50%; /* Example progress */
+  border-radius: 2px;
+}
+
+/* Scrollbar styling for consistency */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #606060;
+}
