@@ -1,45 +1,47 @@
-/* Spotify-inspired Vencord Theme */
+/* Spotify-like Vencord Theme - High Fidelity */
 
-/* Root variables for colors and fonts */
 :root {
   --background-primary: #121212; /* Main background */
-  --background-secondary: #181818; /* Sidebar and panels */
+  --background-secondary: #181818; /* Sidebar, panels */
   --accent-color: #1DB954; /* Spotify green */
   --text-color: #FFFFFF; /* Main text */
   --subtext-color: #B3B3B3; /* Subtext */
-  --hover-color: #282828; /* Hover backgrounds */
-  --scrollbar-thumb: #404040; /* Scrollbar thumb */
+  --hover-color: #282828; /* Hover effect */
+  --scrollbar-thumb: #404040; /* Scrollbar */
   --font-family: 'Arial', sans-serif; /* Font similar to Spotify's */
 }
 
-/* General body styling */
+/* Body */
 body {
   background-color: var(--background-primary);
   font-family: var(--font-family);
   color: var(--text-color);
 }
 
-/* Sidebar (left navigation) */
-.sidebarContainer {
+/* Sidebar (left menu) */
+.sidebar-1Kxus {
   background-color: var(--background-secondary);
   border-right: 1px solid #282828;
 }
 
-/* Sidebar items (e.g., Home, Search, Your Library) */
-.sidebarItem {
+/* Sidebar items (navigation buttons) */
+.sidebar-3WhJk {
   padding: 10px 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
   color: var(--text-color);
+  font-size: 14px;
+  border-radius: 4px;
 }
-.sidebarItem:hover, .sidebarItem.active {
+.sidebar-3WhJk:hover,
+.sidebar-3WhJk.active {
   background-color: var(--hover-color);
   color: var(--accent-color);
 }
 
-/* Top Header (search bar, user profile) */
-.header {
+/* Header (top bar) */
+.header-3QtJw {
   background-color: var(--background-secondary);
   border-bottom: 1px solid #282828;
   padding: 10px 20px;
@@ -48,84 +50,95 @@ body {
   justify-content: space-between;
 }
 
-/* Search input */
-.searchInput {
+/* Search bar */
+.search-3W2vP {
   background-color: #282828;
-  border: none;
-  padding: 8px 12px;
   border-radius: 20px;
-  color: var(--text-color);
+  padding: 6px 12px;
   width: 250px;
+  font-size: 14px;
+  color: var(--text-color);
+  border: none;
 }
-.searchInput::placeholder {
+.search-3W2vP::placeholder {
   color: var(--subtext-color);
 }
 
-/* Main content area (playlist, album, etc.) */
-.mainContent {
+/* Main content area (playlists, tracks) */
+.content-3Y7jG {
   background-color: var(--background-primary);
   padding: 20px;
   overflow-y: auto;
 }
 
-/* Song list items */
-.songItem {
+/* Song/Track list item */
+.songRow-1EtbY {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 8px 0;
   cursor: pointer;
+  border-radius: 4px;
 }
-.songItem:hover {
+.songRow-1EtbY:hover {
   background-color: var(--hover-color);
 }
-.songItem.active {
+.songRow-1EtbY.selected {
   background-color: #333333;
 }
 
-/* Song info (cover art, title, artist) */
-.songCover {
+/* Cover art for tracks */
+.coverImage-2y2pX {
   width: 50px;
   height: 50px;
-  margin-right: 15px;
   border-radius: 4px;
+  margin-right: 15px;
   background-size: cover;
   background-position: center;
 }
-.songDetails {
+
+/* Track info (title, artist) */
+.info-1t3W9 {
   display: flex;
   flex-direction: column;
+  font-family: 'Arial', sans-serif;
 }
-.songTitle {
+.title-1d2kX {
   font-weight: 600;
   font-size: 14px;
   color: var(--text-color);
 }
-.songArtist {
+.subtitle-1JY4w {
   font-size: 12px;
   color: var(--subtext-color);
+  margin-top: 2px;
 }
 
-/* Player controls at bottom (play, pause, next, prev) */
-.playerControls {
+/* Player controls at bottom */
+.playerBar-2nXkV {
   display: flex;
   align-items: center;
   padding: 10px 20px;
   background-color: var(--background-secondary);
   border-top: 1px solid #282828;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
 }
-.controlButton {
+.controlButton-3s4Wn {
   background: none;
   border: none;
-  margin: 0 10px;
   cursor: pointer;
+  margin: 0 10px;
   color: var(--subtext-color);
 }
-.controlButton:hover {
+.controlButton-3s4Wn:hover {
   color: var(--accent-color);
 }
 
-/* Progress bar */
-.progressBarContainer {
+/* Progress bar container */
+.seekBar-1Oe6s {
   flex: 1;
   height: 4px;
   background-color: #404040;
@@ -133,10 +146,10 @@ body {
   margin: 0 15px;
   cursor: pointer;
 }
-.progressBar {
+.seekBarProgress-2n8a0 {
   height: 4px;
   background-color: var(--accent-color);
-  width: 50%; /* Example progress */
+  width: 50%; /* Example progress, adjust dynamically */
   border-radius: 2px;
 }
 
@@ -145,9 +158,11 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
+  background-color: #404040;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #606060;
 }
+
+/* Additional adjustments for icons, fonts, etc. */
